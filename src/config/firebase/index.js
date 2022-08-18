@@ -43,4 +43,7 @@ const registerWithEmailAndPassword = async (name, email, password) => {
   });
 };
 
-export { auth, db, registerWithEmailAndPassword, logInWithEmailAndPassword };
+const logOut = () =>{
+  signOut(auth)
+}
+export { auth, db, logOut, registerWithEmailAndPassword, logInWithEmailAndPassword };

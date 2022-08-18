@@ -28,6 +28,10 @@ body {
     color: #555;
   }
   
+.span-logout{
+  cursor: pointer;
+}
+
   p{
     color: #555;
   }
