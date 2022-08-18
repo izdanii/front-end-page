@@ -1,7 +1,12 @@
 import "./product-details.css";
+import Header from "components/header/header";
+import {NavLink} from "react-router-dom";
+
 
 const ProductsDetails = () => {
   return (
+    <>
+    <Header />
     <div className="small-container single-product">
       <div className="row">
         <div className="col-2">
@@ -35,9 +40,10 @@ const ProductsDetails = () => {
             <option>Small</option>
           </select>
           <input type="number" />
-          <a href="cart.html" className="btn">
+
+          <NavLink to="/cart" className="btn">
             Add to Cart
-          </a>
+          </NavLink>
           <h3>
             Product Details<i className="fa fa-indent"></i>
           </h3>
@@ -49,6 +55,7 @@ const ProductsDetails = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

@@ -46,8 +46,9 @@
   label {
     color: #aaa;
   }
-  .shopping-cart {
+  .shopping-cart.only {
     margin-top: -45px;
+    padding-right: 40px;
   }
   /* Column headers */
   .column-labels label {

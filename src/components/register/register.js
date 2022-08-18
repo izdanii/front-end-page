@@ -1,12 +1,17 @@
 import "./register.css"
+import { NavLink } from "react-router-dom";
+import Header from "components/header/header";
+
 const Register = () => {
     return(
-        <div class="account-page">
-        <div class="container">
-          <div class="row">
-            <div class="col-2">
-              <div class="form-container">
-                <div class="form-btn">
+      <>
+      <Header />
+        <div className="account-page">
+        <div className="container">
+          <div className="row">
+            <div className="col-2">
+              <div className="form-container">
+                <div className="form-btn">
                   <span onclick="login()">Register</span>
                 </div>
                 <form action="" id="RegForm">
@@ -14,14 +19,15 @@ const Register = () => {
                     <input type="email" placeholder="Email" />
                     <input type="password" placeholder="Password" />
     
-                    <button type="submit" class="btn">Register</button>
-                    <a href="login.html">Switch To Login</a>
+                    <button type="submit" className="btn">Register</button>
+                    <NavLink to = "/login">Switch To Login</NavLink>
                   </form>
               </div>
             </div>
           </div>
         </div>
       </div>
+      </>
     )
 }
 

@@ -1,6 +1,10 @@
+import Header from "components/header/header";
+
 const Cart = () => {
     return(
-        <div className="shopping-cart">
+      <>
+      <Header />
+        <div className="shopping-cart only">
 
         <div class="column-labels">
             <br />
@@ -76,6 +80,7 @@ const Cart = () => {
             <button className="checkout">Checkout</button>
       
       </div>
+      </>
     )
 }
 

@@ -42,17 +42,28 @@ body {
   .row {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-around;
+  }
+
+  .small-container .row {
+    flex-wrap: wrap;
   }
   
   .col-2{
     flex-basis: 50%;
-    min-width: 300px;
+    min-width: 50px;
+    min-height: 500px;
+  }
+
+  .background-black{
+    background: black;
+
   }
   
   .col-2 img {
-    max-width: 50%;
+    max-width: 45%;
+    align-items: center;
     padding-top: 50px 0;
     padding-bottom: 50px 0;
   }
@@ -83,7 +94,7 @@ body {
   }
   
   .header {
-    background: radial-gradient(black, white);
+    background: whitesmoke;
   }
   
   .header .row {
@@ -102,13 +113,6 @@ body {
   
   .col-3 img {
     width: 100%;
-  }
-  
-  .small-container {
-    max-width: 1080px;
-    margin: auto;
-    padding-left: 25px;
-    padding-right: 25px;
   }
   
   .small-container {
