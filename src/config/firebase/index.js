@@ -5,6 +5,7 @@ import {
     createUserWithEmailAndPassword,
     signOut
   } from 'firebase/auth';
+import {getFirestore} from "firebase/firestore";
 
 const firebaseConfig = {
     apiKey: "AIzaSyDA8LoHNeUIIOZDqKrQOgJPajp32xGsKCg",
@@ -15,9 +16,9 @@ const firebaseConfig = {
     appId: "1:430329970428:web:f208b34f4bedacc9be6179"
   };
 
-  const app = initializedApp(firebaseConfig);
-  const auth = getAuth(App);
-  const db = getFirestore(App);
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
 
   const logInWithEmailAndPassword = async (email, password) => {
     try {
@@ -28,4 +29,4 @@ const firebaseConfig = {
     }
   };
 
-  export {auth, logInWithEmailAndPassword }
+  export {auth,db, logInWithEmailAndPassword }
