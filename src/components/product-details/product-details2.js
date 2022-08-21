@@ -3,33 +3,33 @@ import Header from "components/header/header";
 import {NavLink} from "react-router-dom";
 
 
-const ProductsDetails = () => {
+const ProductsDetails2 = () => {
   return (
     <>
     <Header />
     <div className="small-container single-product">
       <div className="row">
         <div className="col-2">
-          <img src="./images/gambar/product1.jpg" width="100%" id="ProductImg" />
+          <img src="./images/gambar/fashion2.jpg" width="100%" id="ProductImg" />
 
           <div className="small-img-row">
             <div className="small-img-col">
-              <img src="./images/gambar/product1.jpg" class="small-img" />
+              <img src="./images/gambar/fashion2.jpg" class="small-img" />
             </div>
             <div className="small-img-col">
-              <img src="./images/gambar/product1.jpg" class="small-img" />
+              <img src="./images/gambar/fashion2.jpg" class="small-img" />
             </div>
             <div className="small-img-col">
-              <img src="./images/gambar/product1.jpg" class="small-img" />
+              <img src="./images/gambar/fashion2.jpg" class="small-img" />
             </div>
             <div className="small-img-col">
-              <img src="./images/gambar/product1.jpg" class="small-img" />
+              <img src="./images/gambar/fashion2.jpg" class="small-img" />
             </div>
           </div>
         </div>
         <div className="col-2">
           <p>Home / T-shirt</p>
-          <h2>GG Black Gold</h2>
+          <h2>White Shoes Company</h2>
           <h4>$50.00</h4>
           <select name="" id="">
             <option>Select Size</option>
@@ -59,4 +59,4 @@ const ProductsDetails = () => {
   );
 };
 
-export default ProductsDetails;
+export default ProductsDetails2;

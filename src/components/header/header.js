@@ -22,17 +22,8 @@ const Header = () => {
               <ul>
                 <li>
                   <NavLink to="/">
-                    <a>Home</a>
+                    <a className="bar">Home</a>
                   </NavLink>
-                </li>
-                <li>
-                  {user ? (
-                    <span className="span-logout" onClick={logOut}>logout</span>
-                  ) : (
-                    <NavLink to="/login">
-                      <a>Account</a>
-                    </NavLink>
-                  )}
                 </li>
                 <li>
                   <a>
@@ -43,13 +34,24 @@ const Header = () => {
                       offset={-20}
                       duration={500}
                     >
-                      Product
+                      <a className="bar">Product
+                      </a>
                     </Scroll>
                   </a>
                 </li>
+                <li>
+                  {user ? (
+                    <span className="span-logout" onClick={logOut}>logout</span>
+                  ) : (
+                    <NavLink to="/login">
+                      <a className="bar">Account</a>
+                    </NavLink>
+                  )}
+                </li>
               </ul>
             </nav>
-            <NavLink to="/cart">
+            {
+              user ? <NavLink to="/cart">
               <img
                 src="./images/gambar/cart.png"
                 width="30px"
@@ -57,6 +59,9 @@ const Header = () => {
                 alt="ini test"
               />
             </NavLink>
+            :
+            ""
+            }
           </div>
         </div>
       </div>

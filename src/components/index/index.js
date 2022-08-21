@@ -2,6 +2,9 @@
 import "./index.css";
 import { NavLink } from "react-router-dom";
 import Header from "../header/header.js";
+import { Link as Scroll } from "react-scroll";
+import { Link } from "react-router-dom";
+
 
 const Index = () => {
   return (
@@ -21,43 +24,30 @@ const Index = () => {
             <br />
             You just need to relax and adjusting.
           </p>
-          <NavLink to="/product-details">
-            <p href="" className="btn">
-             Explore Now! &#x27A3;
-            </p>
-          </NavLink>
+
+          <a>
+                    <Scroll className="span-logout"
+                      to="products"
+                      spy={true}
+                      smooth={true}
+                      offset={-20}
+                      duration={500}
+                    >
+                      <a className="btn">
+                         Explore Now! &#x27A3;
+                      </a>
+                    </Scroll>
+                    </a>
         </div>
       <div className="col-2 background-black">
         <img src="./images/gambar/wadon1.png" alt="wadonnn" />
       </div>
     </div>
-    <Categories />
       <FeaturedProduct />
       </>
   );
 };
 
-const Categories = () => {
-  return (
-    <header>
-      <div className="categories">
-        <div className="small-container">
-          <div className="row">
-            <div className="col-3">
-              <img src="fashion4.jpg" alt="" />
-            </div>
-            <div className="col-3">
-              <img src="fashion2.jpg" alt="" />
-            </div>
-            <div className="col-3">
-              <img src="fashion3.jpg" alt="" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-  );
-};
 
 const FeaturedProduct = () => {
   return (
@@ -82,7 +72,7 @@ const FeaturedProduct = () => {
             </NavLink>
           </div>
             <div className="col-4">
-          <NavLink to="/product-details">
+          <Link to="/product-details1">
               <a href="product-details.html">
                 <img src="./images/gambar/product2.jpg" alt="" />
                 <h4>White Your Hustle</h4>
@@ -95,12 +85,12 @@ const FeaturedProduct = () => {
                 </div>
                 <p>Rp,500.000</p>
               </a>
-          </NavLink>
+          </Link>
             </div>
           <div className="col-4">
-          <NavLink to="/product-details">
+          <NavLink to="/product-details2">
             <a href="product-details.html">
-              <img src="./images/gambar/product3.jpg" alt="" />
+              <img src="./images/gambar/fashion2.jpg" alt="" />
               <h4>White Shoes Company</h4>
               <div className="rating">
                 <i className="fa fa-star"></i>
@@ -116,7 +106,7 @@ const FeaturedProduct = () => {
 
         <div className="row">
           <div className="col-4">
-        <NavLink to="/product-details">
+        <NavLink to="/product-details3">
             <a href="product-details.html">
               <img src="./images/gambar/product4.jpg" alt="" />
               <h4>Mamba Paradise</h4>
@@ -133,7 +123,7 @@ const FeaturedProduct = () => {
           
 
           <div className="col-4">
-          <NavLink to="/product-details">
+          <NavLink to="/product-details4">
             <a href="product-details.html">
               <img src="./images/gambar/product5.jpg" alt="" />
               <h4>Nike White Shoes</h4>
@@ -150,7 +140,7 @@ const FeaturedProduct = () => {
           </div>
 
           <div className="col-4">
-            <NavLink to = "/product-details">
+            <NavLink to = "/product-details5">
             <a href="product-details.html">
               <img src="./images/gambar/product7.jpg" alt="" />
               <h4>Pink Hoodie Skies</h4>
