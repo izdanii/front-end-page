@@ -46,9 +46,12 @@
   label {
     color: #aaa;
   }
-  .shopping-cart.only {
+  .shopping-cart {
     margin-top: -45px;
     padding-right: 40px;
+    width: 850px;
+    margin-left: 0px;
+    margin-right: 20px;
   }
   /* Column headers */
   .column-labels label {
@@ -61,7 +64,10 @@
   }
   /* Product entries */
   .product {
-    margin-bottom: 20px;
+    width: 80%;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
     padding-bottom: 10px;
     border-bottom: 1px solid #eee;
   }

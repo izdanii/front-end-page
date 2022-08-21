@@ -4,28 +4,35 @@ import { NavLink } from "react-router-dom";
 import Header from "../header/header.js";
 import { Link as Scroll } from "react-scroll";
 import { Link } from "react-router-dom";
+import { 
+  Row,
+  RowManta,
+Column2,
+H1,
+P,
+Btn,
+Wadon1,
+SmallContainer } from "./index-style";
 
 
 const Index = () => {
   return (
     <>
     <Header />
-      <div className="row">
-        <div className="col-2 background-black">
-          <h1>
+      <RowManta>
+        <Column2>
+          <H1>
             Can You Do This
             <br />
             To Your Lifestyle?
-          </h1>
-          <p>
+          </H1>
+          <P>
             Your lifestyle it's your choice.
             <br />
             You can do anything to your fashion.
             <br />
             You just need to relax and adjusting.
-          </p>
-
-          <a>
+          </P>
                     <Scroll className="span-logout"
                       to="products"
                       spy={true}
@@ -33,16 +40,13 @@ const Index = () => {
                       offset={-20}
                       duration={500}
                     >
-                      <a className="btn">
+                      <Btn>
                          Explore Now! &#x27A3;
-                      </a>
+                      </Btn>
                     </Scroll>
-                    </a>
-        </div>
-      <div className="col-2 background-black">
-        <img src="./images/gambar/wadon1.png" alt="wadonnn" />
-      </div>
-    </div>
+        </Column2>
+        <Wadon1 src="./images/gambar/wadon1.png" alt="wadonnn" />
+    </RowManta>
       <FeaturedProduct />
       </>
   );
@@ -52,9 +56,9 @@ const Index = () => {
 const FeaturedProduct = () => {
   return (
     <header>
-      <div id = "products" className="small-container">
+      <SmallContainer>
         <h2>Featured Products</h2>
-        <div className="row">
+        <Row>
           <div className="col-4">
             <NavLink to="/product-details">
               <a href="product-details.html">
@@ -157,8 +161,8 @@ const FeaturedProduct = () => {
           </div>
 
         </div>
-        </div>
-        </div>
+        </Row>
+        </SmallContainer>
     </header>
   );
 };

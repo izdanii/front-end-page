@@ -13,8 +13,6 @@ body {
   color: white;
 }
 
-
-
   nav {
     flex: 1;
     text-align: right;
@@ -37,6 +35,7 @@ body {
   
 .span-logout{
   cursor: pointer;
+  color: white;
 }
 
   p{
@@ -147,16 +146,21 @@ body {
   }
 
   @media screen and (max-width : 768px) {
-    
+    .col-2 img {
+      max-width: 85%;
+    }
   }
 
   @media screen and (max-width : 576px) {
     .col-4 { 
-      /* flex-basis: 10%; */
+      flex-basis: 70%;
       padding: 10px;
-      width: 150px;
+      /* width: 150px; */
       margin-bottom: 50px;
       background-color: whitesmoke;
     }
+      .col-2 img {
+        max-width: 100%;
+      }
+    
   }
-  

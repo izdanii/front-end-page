@@ -28,7 +28,6 @@ const ProductsDetails = () => {
           </div>
         </div>
         <div className="col-2">
-          <p>Home / T-shirt</p>
           <h2>Nike White Shoes</h2>
           <h4>$50.00</h4>
           <select name="" id="">

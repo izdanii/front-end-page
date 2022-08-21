@@ -259,6 +259,19 @@
       width: 40%;
     }
   }
+
+  @media screen and (max-width : 768px) {
+    .single-product .col-2 img {
+      padding: 65px 0 0;
+      
+    }
+  }
+  
+  @media screen and (max-width : 576px) {
+    .single-product .col-2{
+      margin-bottom: -100px;
+    }
+  }
   
   
   /* Login */

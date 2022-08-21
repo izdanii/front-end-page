@@ -3,30 +3,40 @@ import { NavLink } from "react-router-dom";
 import { Link as Scroll } from "react-scroll";
 import { auth, logOut } from "config/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { 
+  StyledHeader,
+   StyledContainer,
+  StyledNavbar,
+StyledLogo,
+Nav,
+Ul,
+Li,
+A,
+SpanLogout,
+ImgCart }
+   from "./header-style";
+
 
 const Header = () => {
   const [user] = useAuthState(auth);
   return (
     <header>
-      <div className="header">
-        <div className="container">
-          <div className="navbar">
-            <div className="logo">
-              <img
+      <StyledHeader>
+        <StyledContainer>
+          <StyledNavbar>
+              <StyledLogo
                 src="./images/gambar/cydt.png"
-                width="90px"
                 alt="Ini gambar"
               />
-            </div>
-            <nav>
-              <ul>
-                <li>
+            <Nav>
+              <Ul>
+                <Li>
                   <NavLink to="/">
                     <a className="bar">Home</a>
                   </NavLink>
-                </li>
-                <li>
-                  <a>
+                </Li>
+                <Li>
+                  <A>
                     <Scroll className="span-logout"
                       to="products"
                       spy={true}
@@ -34,37 +44,34 @@ const Header = () => {
                       offset={-20}
                       duration={500}
                     >
-                      <a className="bar">Product
-                      </a>
+                      <A>Product</A>
                     </Scroll>
-                  </a>
-                </li>
-                <li>
+                  </A>
+                </Li>
+                <Li>
                   {user ? (
-                    <span className="span-logout" onClick={logOut}>logout</span>
+                    <SpanLogout onClick={logOut}>logout</SpanLogout>
                   ) : (
                     <NavLink to="/login">
-                      <a className="bar">Account</a>
+                      <A>Account</A>
                     </NavLink>
                   )}
-                </li>
-              </ul>
-            </nav>
+                </Li>
+              </Ul>
+            </Nav>
             {
               user ? <NavLink to="/cart">
-              <img
-                src="./images/gambar/cart.png"
-                width="30px"
-                height="30px"
+              <ImgCart
+                src="./images/gambar/cart-arrow-down-solid.svg"
                 alt="ini test"
               />
             </NavLink>
             :
             ""
             }
-          </div>
-        </div>
-      </div>
+          </StyledNavbar>
+        </StyledContainer>
+      </StyledHeader>
     </header>
   );
 };
