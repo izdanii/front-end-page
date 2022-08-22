@@ -57,14 +57,18 @@ padding-right: 25px;
 padding-bottom: 25px;
 `
 
-export const H2=styled.h2`
-
-`
-
 export const Column4=styled.div`
 flex-basis: 25%;
 padding: 10px;
 min-width: 200px;
 margin-bottom: 50px;
 background-color: whitesmoke;
+`
+
+export const Col4Img=styled.img`
+width: 100%;
+`
+
+export const Rating=styled.div`
+
 `

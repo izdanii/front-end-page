@@ -12,7 +12,10 @@ H1,
 P,
 Btn,
 Wadon1,
-SmallContainer } from "./index-style";
+SmallContainer, 
+Column4,
+Col4Img,
+Rating} from "./index-style";
 
 
 const Index = () => {
@@ -52,115 +55,114 @@ const Index = () => {
   );
 };
 
-
 const FeaturedProduct = () => {
   return (
     <header>
       <SmallContainer>
         <h2>Featured Products</h2>
         <Row>
-          <div className="col-4">
+          <Column4>
             <NavLink to="/product-details">
               <a href="product-details.html">
-                <img src="./images/gambar/product1.jpg" alt="" />
+                <Col4Img src="./images/gambar/product1.jpg" alt="" />
                 <h4>GG Black Gold</h4>
-                <div className="rating">
+                <Rating>
                   <i className="fa fa-star"></i>
                   <i className="fa fa-star"></i>
                   <i className="fa fa-star"></i>
                   <i className="fa fa-star"></i>
                   <i className="fa fa-star-o"></i>
-                </div>
+                </Rating>
                 <p>Rp,400.000</p>
               </a>
             </NavLink>
-          </div>
-            <div className="col-4">
-          <Link to="/product-details1">
+          </Column4>
+            <Column4>
+          <NavLink to="/product-details1">
               <a href="product-details.html">
-                <img src="./images/gambar/product2.jpg" alt="" />
+                <Col4Img src="./images/gambar/product2.jpg" alt="" />
                 <h4>White Your Hustle</h4>
-                <div className="rating">
+                <Rating>
                   <i className="fa fa-star"></i>
                   <i className="fa fa-star"></i>
                   <i className="fa fa-star"></i>
                   <i className="fa fa-star"></i>
                   <i className="fa fa-star-o"></i>
-                </div>
+                </Rating>
                 <p>Rp,500.000</p>
               </a>
-          </Link>
-            </div>
-          <div className="col-4">
+          </NavLink>
+            </Column4>
+          <Column4>
           <NavLink to="/product-details2">
             <a href="product-details.html">
-              <img src="./images/gambar/fashion2.jpg" alt="" />
+              <Col4Img src="./images/gambar/fashion2.jpg" alt="" />
               <h4>White Shoes Company</h4>
-              <div className="rating">
+              <Rating>
                 <i className="fa fa-star"></i>
                 <i className="fa fa-star"></i>
                 <i className="fa fa-star"></i>
                 <i className="fa fa-star"></i>
                 <i className="fa fa-star-o"></i>
-              </div>
+              </Rating>
               <p>Rp,950.000</p>
             </a>
           </NavLink>
-          </div>
+          </Column4>
 
-        <div className="row">
-          <div className="col-4">
+        <Row>
+          <Column4>
         <NavLink to="/product-details3">
             <a href="product-details.html">
-              <img src="./images/gambar/product4.jpg" alt="" />
+              <Col4Img src="./images/gambar/product4.jpg" alt="" />
               <h4>Mamba Paradise</h4>
-              <div className="rating">
+              <Rating>
                 <i className="fa fa-star"></i>
                 <i className="fa fa-star"></i>
                 <i className="fa fa-star"></i>
                 <i className="fa fa-star-o"></i>
-              </div>
+              </Rating>
               <p>Rp,250.000</p>
             </a>
           </NavLink>
-          </div>
+          </Column4>
           
 
-          <div className="col-4">
+          <Column4>
           <NavLink to="/product-details4">
             <a href="product-details.html">
-              <img src="./images/gambar/product5.jpg" alt="" />
+              <Col4Img src="./images/gambar/product5.jpg" alt="" />
               <h4>Nike White Shoes</h4>
-              <div className="rating">
+              <Rating>
                 <i className="fa fa-star"></i>
                 <i className="fa fa-star"></i>
                 <i className="fa fa-star"></i>
                 <i className="fa fa-star"></i>
                 <i className="fa fa-star-o"></i>
-              </div>
+              </Rating>
               <p>Rp,300.000</p>
             </a>
           </NavLink>
-          </div>
+          </Column4>
 
-          <div className="col-4">
+          <Column4>
             <NavLink to = "/product-details5">
             <a href="product-details.html">
-              <img src="./images/gambar/product7.jpg" alt="" />
+              <Col4Img src="./images/gambar/product7.jpg" alt="" />
               <h4>Pink Hoodie Skies</h4>
-              <div className="rating">
+              <Rating>
                 <i className="fa fa-star"></i>
                 <i className="fa fa-star"></i>
                 <i className="fa fa-star"></i>
                 <i className="fa fa-star"></i>
                 <i className="fa fa-star-o"></i>
-              </div>
+              </Rating>
               <p>Rp,600.000</p>
             </a>
             </NavLink>
-          </div>
+          </Column4>
 
-        </div>
+        </Row>
         </Row>
         </SmallContainer>
     </header>
