@@ -55,7 +55,7 @@ const Login = () => {
                     onChange={(e) =>
                       setDataLogin({ ...dataLogin, email: e.target.value })
                     }
-                    placeholder="email"
+                    placeholder="Email"
                     value={dataLogin.email}
                   />
                   <Input

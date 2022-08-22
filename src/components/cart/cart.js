@@ -1,12 +1,12 @@
 import Header from "components/header/header";
+import { ColLabels, Products, ShoppingCart } from "./cart-style";
 
 const Cart = () => {
     return(
       <>
       <Header />
-        <div className="shopping-cart only">
-
-        <div class="column-labels">
+        <ShoppingCart>
+        <ColLabels>
             <br />
             <br />
             <br />
@@ -16,9 +16,9 @@ const Cart = () => {
           <label className="product-quantity">Quantity</label>
           <label className="product-removal">Remove</label>
           <label className="product-line-price">Total</label>
-        </div>
+        </ColLabels>
       
-        <div className="product">
+        <Products>
           <div className="product-image">
             <img src="https://s.cdpn.io/3/dingo-dog-bones.jpg" />
           </div>
@@ -36,7 +36,7 @@ const Cart = () => {
             </button>
           </div>
           <div className="product-line-price">25.98</div>
-        </div>
+        </Products>
       
         <div className="product">
           <div className="product-image">
@@ -79,7 +79,7 @@ const Cart = () => {
             
             <button className="checkout">Checkout</button>
       
-      </div>
+      </ShoppingCart>
       </>
     )
 }
