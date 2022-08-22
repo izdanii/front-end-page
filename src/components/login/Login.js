@@ -5,6 +5,15 @@ import { auth, logInWithEmailAndPassword } from "config/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { AccountPage, 
+  FormContainer, 
+  Container, 
+  Row,
+FormBtn,
+FormCol2, 
+RegForm,
+Input} from "./login-style";
+
 
 const Login = () => {
   const [dataLogin, setDataLogin] = useState({ email: "", password: "" });
@@ -32,16 +41,16 @@ const Login = () => {
   return (
     <>
       <Header />
-      <div className="account-page">
-        <div className="container">
-          <div className="row">
+      <AccountPage>
+        <Container>
+          <Row>
             <div className="col-2">
-              <div className="form-container">
-                <div className="form-btn">
+              <FormContainer>
+                <FormBtn>
                   <span>Login</span>
-                </div>
-                <form action="" id="RegForm">
-                  <input
+                </FormBtn>
+                <RegForm>
+                  <Input
                     type="email"
                     onChange={(e) =>
                       setDataLogin({ ...dataLogin, email: e.target.value })
@@ -49,7 +58,7 @@ const Login = () => {
                     placeholder="email"
                     value={dataLogin.email}
                   />
-                  <input
+                  <Input
                     type="password"
                     onChange={(e) =>
                       setDataLogin({ ...dataLogin, password: e.target.value })
@@ -57,20 +66,21 @@ const Login = () => {
                     placeholder="Password"
                     value={dataLogin.password}
                   />
-                  <button
+                  <FormBtn
                     type="submit"
                     onClick={(e) => handleSubmit(e, "login")}
                     className="btn"
                   >
                     Login
-                  </button>
+                  </FormBtn>
+                  <br /><br />
                   <NavLink to="/register">Switch To Register</NavLink>
-                </form>
-              </div>
+                </RegForm>
+              </FormContainer>
             </div>
-          </div>
-        </div>
-      </div>
+          </Row>
+        </Container>
+      </AccountPage>
     </>
   );
 };
