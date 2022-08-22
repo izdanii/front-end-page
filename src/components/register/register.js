@@ -5,6 +5,9 @@ import { auth, registerWithEmailAndPassword } from "config/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { AccountPage, FormBtn, FormContainer, Input, RegForm } from "./register-style";
+import { Container } from "./register-style";
+import { Row } from "./register-style";
 
 const Register = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -37,16 +40,16 @@ const Register = () => {
   return (
     <>
       <Header />
-      <div className="account-page">
-        <div className="container">
-          <div className="row">
+      <AccountPage>
+        <Container>
+          <Row>
             <div className="col-2">
-              <div className="form-container">
-                <div className="form-btn">
+              <FormContainer>
+                <FormBtn>
                   <span>Register</span>
-                </div>
-                <form action="" id="RegForm">
-                  <input
+                </FormBtn>
+                <RegForm>
+                  <Input
                     type="text"
                     onChange={(e) =>
                       setSignUp({ ...signUp, name: e.target.value })
@@ -55,7 +58,7 @@ const Register = () => {
                     value={signUp.name}
                   />
 
-                  <input
+                  <Input
                     type="email"
                     onChange={(e) =>
                       setSignUp({ ...signUp, email: e.target.value })
@@ -64,7 +67,7 @@ const Register = () => {
                     value={signUp.email}
                   />
 
-                  <input
+                  <Input
                     type="password"
                     onChange={(e) =>
                       setSignUp({ ...signUp, password: e.target.value })
@@ -73,20 +76,20 @@ const Register = () => {
                     value={signUp.password}
                   />
 
-                  <button
+                  <FormBtn
                     type="submit"
                     onClick={(e) => handleSubmit(e, "register")}
                     className="btn"
                   >
                     Register
-                  </button>
+                  </FormBtn>
                   <NavLink to="/login">Switch To Login</NavLink>
-                </form>
-              </div>
+                </RegForm>
+              </FormContainer>
             </div>
-          </div>
-        </div>
-      </div>
+          </Row>
+        </Container>
+      </AccountPage>
     </>
   );
 };
