@@ -3,7 +3,7 @@ import "./index.css";
 import { NavLink } from "react-router-dom";
 import Header from "../header/header.js";
 import { Link as Scroll } from "react-scroll";
-import { Link } from "react-router-dom";
+import { useFetchProducts } from "hooks/useFetchProduct";
 import { 
   Row,
   RowManta,
@@ -56,113 +56,61 @@ const Index = () => {
 };
 
 const FeaturedProduct = () => {
+  let products = useFetchProducts()
+  console.log(products)
+  let productList = []
+  let productList2 = []
+  if (products.products.length>0){
+    for (let i = 0; i<=2; i++) {
+        productList.push(<Column4 key={i}>
+    <NavLink to={`/product-details${products.products[i]}`}>
+      <a href="product-details.html">
+        <Col4Img src={products.products[i].url}  alt="" />
+        <h4>{products.products[i].name}</h4>
+        <Rating>
+          <i className="fa fa-star"></i>
+          <i className="fa fa-star"></i>
+          <i className="fa fa-star"></i>
+          <i className="fa fa-star"></i>
+          <i className="fa fa-star-o"></i>
+        </Rating>
+        <p>Rp, {products.products[i].price}</p>
+      </a>
+    </NavLink>
+  </Column4>)
+    }
+
+    for (let i = 3; i<=5; i++) {
+      productList2.push(<Column4 key={i}>
+  <NavLink to={`/product-details${products.products[i]}`}>
+    <a href="product-details.html">
+      <Col4Img src={products.products[i].url}  alt="" />
+      <h4>{products.products[i].name}</h4>
+      <Rating>
+        <i className="fa fa-star"></i>
+        <i className="fa fa-star"></i>
+        <i className="fa fa-star"></i>
+        <i className="fa fa-star"></i>
+        <i className="fa fa-star-o"></i>
+      </Rating>
+      <p>Rp, {products.products[i].price}</p>
+    </a>
+  </NavLink>
+</Column4>)
+  }
+
+  } else {
+    productList=""
+  }
   return (
     <header>
       <SmallContainer>
         <h2>Featured Products</h2>
         <Row>
-          <Column4>
-            <NavLink to="/product-details">
-              <a href="product-details.html">
-                <Col4Img src="./images/gambar/product1.jpg" alt="" />
-                <h4>GG Black Gold</h4>
-                <Rating>
-                  <i className="fa fa-star"></i>
-                  <i className="fa fa-star"></i>
-                  <i className="fa fa-star"></i>
-                  <i className="fa fa-star"></i>
-                  <i className="fa fa-star-o"></i>
-                </Rating>
-                <p>Rp,400.000</p>
-              </a>
-            </NavLink>
-          </Column4>
-            <Column4>
-          <NavLink to="/product-details1">
-              <a href="product-details.html">
-                <Col4Img src="./images/gambar/product2.jpg" alt="" />
-                <h4>White Your Hustle</h4>
-                <Rating>
-                  <i className="fa fa-star"></i>
-                  <i className="fa fa-star"></i>
-                  <i className="fa fa-star"></i>
-                  <i className="fa fa-star"></i>
-                  <i className="fa fa-star-o"></i>
-                </Rating>
-                <p>Rp,500.000</p>
-              </a>
-          </NavLink>
-            </Column4>
-          <Column4>
-          <NavLink to="/product-details2">
-            <a href="product-details.html">
-              <Col4Img src="./images/gambar/fashion2.jpg" alt="" />
-              <h4>White Shoes Company</h4>
-              <Rating>
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star-o"></i>
-              </Rating>
-              <p>Rp,950.000</p>
-            </a>
-          </NavLink>
-          </Column4>
-
-        <Row>
-          <Column4>
-        <NavLink to="/product-details3">
-            <a href="product-details.html">
-              <Col4Img src="./images/gambar/product4.jpg" alt="" />
-              <h4>Mamba Paradise</h4>
-              <Rating>
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star-o"></i>
-              </Rating>
-              <p>Rp,250.000</p>
-            </a>
-          </NavLink>
-          </Column4>
-          
-
-          <Column4>
-          <NavLink to="/product-details4">
-            <a href="product-details.html">
-              <Col4Img src="./images/gambar/product5.jpg" alt="" />
-              <h4>Nike White Shoes</h4>
-              <Rating>
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star-o"></i>
-              </Rating>
-              <p>Rp,300.000</p>
-            </a>
-          </NavLink>
-          </Column4>
-
-          <Column4>
-            <NavLink to = "/product-details5">
-            <a href="product-details.html">
-              <Col4Img src="./images/gambar/product7.jpg" alt="" />
-              <h4>Pink Hoodie Skies</h4>
-              <Rating>
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star-o"></i>
-              </Rating>
-              <p>Rp,600.000</p>
-            </a>
-            </NavLink>
-          </Column4>
-
+          {productList}
         </Row>
+        <Row>
+          {productList2}
         </Row>
         </SmallContainer>
     </header>
