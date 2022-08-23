@@ -1,35 +1,40 @@
 import "./product-details.css";
 import Header from "components/header/header";
-import {NavLink} from "react-router-dom";
+import {NavLink, useParams} from "react-router-dom";
+import { useFetchProduct } from "hooks/useFetchProduct";
 
 
 const ProductsDetails = () => {
+  let {id} = useParams()
+  let data = useFetchProduct(id)
+  let product = data.product
+  console.log(id)
   return (
     <>
     <Header />
     <div className="small-container single-product">
       <div className="row">
         <div className="col-2">
-          <img src="./images/gambar/product1.jpg" width="100%" id="ProductImg" />
+          <img src={`/${product.url}`}width="100%" id="ProductImg" />
 
           <div className="small-img-row">
             <div className="small-img-col">
-              <img src="./images/gambar/product1.jpg" class="small-img" />
+              <img src={`/${product.url}`}class="small-img" />
             </div>
             <div className="small-img-col">
-              <img src="./images/gambar/product1.jpg" class="small-img" />
+              <img src={`/${product.url}`}class="small-img" />
             </div>
             <div className="small-img-col">
-              <img src="./images/gambar/product1.jpg" class="small-img" />
+              <img src={`/${product.url}`}class="small-img" />
             </div>
             <div className="small-img-col">
-              <img src="./images/gambar/product1.jpg" class="small-img" />
+              <img src={`/${product.url}`}class="small-img" />
             </div>
           </div>
         </div>
         <div className="col-2">
-          <h2>GG Black Gold</h2>
-          <h4>$50.00</h4>
+          <h2>{product.name}</h2>
+          <h4>{product.price}</h4>
           <select name="" id="">
             <option>Select Size</option>
             <option>XXL</option>
@@ -47,9 +52,7 @@ const ProductsDetails = () => {
             Product Details<i className="fa fa-indent"></i>
           </h3>
           <p className="description-product">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nemo
-            nam magnam rerum sunt explicabo! Distinctio ipsam doloremque nostrum
-            ipsum?
+            {product.description}
           </p>
         </div>
       </div>

@@ -3,7 +3,7 @@ import "./index.css";
 import { NavLink } from "react-router-dom";
 import Header from "../header/header.js";
 import { Link as Scroll } from "react-scroll";
-import { useFetchProducts } from "hooks/useFetchProduct";
+import { useFetchProducts } from "hooks/useFetchProducts";
 import { 
   Row,
   RowManta,
@@ -63,7 +63,7 @@ const FeaturedProduct = () => {
   if (products.products.length>0){
     for (let i = 0; i<=2; i++) {
         productList.push(<Column4 key={i}>
-    <NavLink to={`/product-details${products.products[i]}`}>
+    <NavLink to={`/product-details/${products.products[i].id}`}>
       <a href="product-details.html">
         <Col4Img src={products.products[i].url}  alt="" />
         <h4>{products.products[i].name}</h4>
@@ -82,7 +82,7 @@ const FeaturedProduct = () => {
 
     for (let i = 3; i<=5; i++) {
       productList2.push(<Column4 key={i}>
-  <NavLink to={`/product-details${products.products[i]}`}>
+  <NavLink to={`/product-details/${products.products[i].id}`}>
     <a href="product-details.html">
       <Col4Img src={products.products[i].url}  alt="" />
       <h4>{products.products[i].name}</h4>

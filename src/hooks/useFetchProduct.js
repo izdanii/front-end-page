@@ -1,22 +1,20 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-export const useFetchProducts= () => {
-    const [products, setProducts] = useState([])
+export const useFetchProduct = (id) => {
+    const [product, setProduct] = useState([])
     useEffect(() => {
-        const FetchProducts = async() => {
-            try{
+        const fetchProduct = async () => {
+            try {
                 const response = await axios.get(
-                    "https://63043aca0de3cd918b43b98c.mockapi.io/product"
+                    `https://63043aca0de3cd918b43b98c.mockapi.io/product/${id}`
                 )
-                console.log(response)
-                setProducts(response.data)
-               } catch (error) {
+                setProduct(response.data)
+            } catch (error) {
                 console.log("error", error)
-               }
+            }
         }
-      FetchProducts()
-   }, [])
-   return {products}
+        fetchProduct()
+    }, [])
+    return{product}
 }
-
