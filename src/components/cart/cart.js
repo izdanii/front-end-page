@@ -1,22 +1,22 @@
 import Header from "components/header/header";
 import { MainProduct, ShoppingCart } from "./cart-style";
-
+import './cart.css'
 const Cart = () => {
     return(
       <>
       <Header />
-        <MainProduct>
-        <ShoppingCart>
+        <MainProduct className="mobile-Product">
+        <ShoppingCart className="mobile-shoping">
         <div class="column-labels">
             <br />
             <br />
             <br />
-          <label className="product-image">Image</label>
-          <label className="product-details">Product</label>
-          <label className="product-price">Price</label>
-          <label className="product-quantity">Quantity</label>
-          <label className="product-removal">Remove</label>
-          <label className="product-line-price">Total</label>
+          <label className="product-image product-tb">Image</label>
+          <label className="product-details product-tb">Product</label>
+          <label className="product-price product-tb">Price</label>
+          <label className="product-quantity product-tb">Quantity</label>
+          <label className="product-removal product-tb">Remove</label>
+          <label className="product-line-price product-tb">Total</label>
         </div>
       
         <div className="product">
