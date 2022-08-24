@@ -16,6 +16,7 @@ SmallContainer,
 Column4,
 Col4Img,
 Rating} from "./index-style";
+import { Loading } from "components/loading/loading";
 
 
 const Index = () => {
@@ -59,7 +60,7 @@ const FeaturedProduct = () => {
   let products = useFetchProducts()
   let productList = []
   let productList2 = []
-  if (products.products.length>0){
+  if (products.products.length>0 && !products.Loading){
     for (let i = 0; i<=2; i++) {
         productList.push(<Column4 key={i} id="products">
     <NavLink to={`/product-details/${products.products[i].id}`}>
@@ -106,10 +107,16 @@ const FeaturedProduct = () => {
       <SmallContainer>
         <h2>Featured Products</h2>
         <Row>
-          {productList}
+          {
+            products.Loading?
+            <Loading /> : productList
+          }
         </Row>
         <Row>
-          {productList2}
+        {
+            products.Loading?
+            <Loading /> : productList2
+          }
         </Row>
         </SmallContainer>
     </header>
