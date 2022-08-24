@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const ShoppingCart=styled.div`
 margin-top: -45px;
 padding-right: 40px;
-width: 850px;
+width: 85%;
 margin-left: 0px;
 margin-right: 20px;
 `
@@ -25,4 +25,8 @@ padding-left: 20px;
 padding-right: 20px;
 padding-bottom: 10px;
 border-bottom: 1px solid #eee;
+`
+
+export const MainProduct=styled.div`
+margin-left:5rem;
 `

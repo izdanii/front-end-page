@@ -1,10 +1,11 @@
 import Header from "components/header/header";
-import { ShoppingCart } from "./cart-style";
+import { MainProduct, ShoppingCart } from "./cart-style";
 
 const Cart = () => {
     return(
       <>
       <Header />
+        <MainProduct>
         <ShoppingCart>
         <div class="column-labels">
             <br />
@@ -37,7 +38,7 @@ const Cart = () => {
           </div>
           <div className="product-line-price">25.98</div>
         </div>
-      
+        <div className="main-product-cart">
         <div className="product">
           <div className="product-image">
             <img src="https://s.cdpn.io/3/large-NutroNaturalChoiceAdultLambMealandRiceDryDogFood.png" />
@@ -78,8 +79,11 @@ const Cart = () => {
         </div>
             
             <button className="checkout">Checkout</button>
+        </div>
+
       
       </ShoppingCart>
+      </MainProduct>
       </>
     )
 }
