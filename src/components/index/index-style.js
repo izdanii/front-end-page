@@ -52,6 +52,7 @@ padding-bottom: 50px 0;
 export const SmallContainer=styled.div`
 max-width: 1080px;
 margin: auto;
+margin-top: 50px;
 padding-left: 25px;
 padding-right: 25px;
 padding-bottom: 25px;
