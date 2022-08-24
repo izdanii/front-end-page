@@ -1,5 +1,5 @@
 import "../index/index.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { Link as Scroll } from "react-scroll";
 import { auth, logOut } from "config/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -18,6 +18,7 @@ ImgCart }
 
 
 const Header = () => {
+  const { id } = useParams()
   const [user] = useAuthState(auth);
   return (
     <header>
@@ -25,8 +26,14 @@ const Header = () => {
         <StyledContainer>
           <StyledNavbar>
               <StyledLogo
-                src="./images/gambar/cydt.png"
-                alt="Ini gambar"
+                src={
+                  id 
+                  ?
+                  "/images/gambar/cydt.png"
+                  :
+                  "./images/gambar/cydt.png"
+                }
+                alt="Logo"
               />
             <Nav>
               <Ul>
@@ -41,7 +48,7 @@ const Header = () => {
                       to="products"
                       spy={true}
                       smooth={true}
-                      offset={-20}
+                      offset={-60}
                       duration={500}
                     >
                       <A>Product</A>
@@ -62,7 +69,14 @@ const Header = () => {
             {
               user ? <NavLink to="/cart">
               <ImgCart
-                src="./images/gambar/cart-arrow-down-solid.svg"
+              src={
+                id
+                ?
+                "/images/gambar/cart-arrow-down-solid.svg"
+                :
+                "./images/gambar/cart-arrow-down-solid.svg"
+              }
+                
                 alt="ini test"
               />
             </NavLink>

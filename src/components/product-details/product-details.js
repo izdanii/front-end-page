@@ -34,7 +34,7 @@ const ProductsDetails = () => {
         </div>
         <div className="col-2">
           <h2>{product.name}</h2>
-          <h4>{product.price}</h4>
+          <h4>Rp. {product.price}</h4>
           <select name="" id="">
             <option>Select Size</option>
             <option>XXL</option>

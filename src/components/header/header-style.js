@@ -14,8 +14,7 @@ export const StyledContainer=styled.div`
 
 export const StyledNavbar=styled.div`
 display : flex;
-    align-items: center;
-    padding: 20px;
+align-items: center;
 `
 
 export const StyledLogo=styled.img`

@@ -40,7 +40,7 @@ const Index = () => {
                       to="products"
                       spy={true}
                       smooth={true}
-                      offset={-20}
+                      offset={-60}
                       duration={500}
                     >
                       <Btn>
@@ -57,12 +57,11 @@ const Index = () => {
 
 const FeaturedProduct = () => {
   let products = useFetchProducts()
-  console.log(products)
   let productList = []
   let productList2 = []
   if (products.products.length>0){
     for (let i = 0; i<=2; i++) {
-        productList.push(<Column4 key={i}>
+        productList.push(<Column4 key={i} id="products">
     <NavLink to={`/product-details/${products.products[i].id}`}>
       <a href="product-details.html">
         <Col4Img src={products.products[i].url}  alt="" />
