@@ -6,6 +6,7 @@ import {
   signOut,
 } from "firebase/auth";
 import { getFirestore, addDoc, collection } from "firebase/firestore";
+import swal from "sweetalert";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDA8LoHNeUIIOZDqKrQOgJPajp32xGsKCg",
@@ -23,27 +24,44 @@ const db = getFirestore(app);
 const logInWithEmailAndPassword = async (email, password) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
+    swal("Success!", "You're Logined!", "success");
   } catch (err) {
     console.error(err);
     alert(err.message);
+    swal("Error", err.message, "error");
   }
 };
 
 const registerWithEmailAndPassword = async (name, email, password) => {
-  console.log("register");
-  const response = await createUserWithEmailAndPassword(auth, email, password);
-  console.log("response", response);
-  const user = response.user;
-  await addDoc(collection(db, "users"), {
-    uid: user.uid,
-    name,
-    authProvider: "local",
-    email,
-    password,
-  });
+  try {
+    const response = await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+    const user = response.user;
+    await addDoc(collection(db, "users"), {
+      uid: user.uid,
+      name,
+      authProvider: "local",
+      email,
+      password,
+    });
+  } catch (err) {
+    console.error(err);
+    alert(err.message);
+    swal("Error", err.message, "error");
+  }
 };
 
-const logOut = () =>{
-  signOut(auth)
-}
-export { auth, db, logOut, registerWithEmailAndPassword, logInWithEmailAndPassword };
+const logOut = () => {
+  signOut(auth);
+  swal("You're LogedOut", "Thank You For Coming!", "info")
+};
+export {
+  auth,
+  db,
+  logOut,
+  registerWithEmailAndPassword,
+  logInWithEmailAndPassword,
+};
