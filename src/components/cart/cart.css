@@ -1,14 +1,43 @@
+.column-labels-flex {
+  display: flex;
+}
+.column-labels-one {
+  flex : 1;
+  display: flex;
+}
+
+.label-image {
+  margin-left: 60px;
+}
+
+.label-details {
+  margin-left: 90px;
+}
+
+.label-price{
+  margin-left: 180px;
+}
+
+.label-quantity{
+  margin-left: 20px;
+}
+
+.label-removal{
+  margin-left: 30px;
+}
+
+
 .product-image {
     float: left;
     width: 20%;
   }
   .product-details {
     float: left;
-    width: 37%;
+    width: 27%;
   }
   .product-price {
     float: left;
-    width: 12%;
+    width: 8%;
   }
   .product-quantity {
     float: left;
@@ -16,7 +45,7 @@
   }
   .product-removal {
     float: left;
-    width: 9%;
+    width: 11%;
   }
   .product-line-price {
     float: left;
@@ -37,7 +66,9 @@
   /* Apply clearfix in a few places */
   /* Apply dollar signs */
   .product .product-price:before, .product .product-line-price:before, .totals-value:before {
-    content: '$';
+    content: '';
+    
+    
   }
   /* Body/Header stuff */
   h1 {
@@ -54,7 +85,7 @@
     margin-right: 20px;
   }
   /* Column headers */
-  .column-labels label {
+  .column-labels-flex {
     padding-bottom: 15px;
     margin-bottom: 15px;
     border-bottom: 1px solid #eee;
@@ -69,7 +100,7 @@
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #eee;
+    /* border-bottom: 1px solid #eee; */
   }
   .product .product-image {
     text-align: center;
@@ -159,6 +190,7 @@
     .product-price {
       clear: both;
       width: 70px;
+      float: left
     }
     .product-quantity {
       width: 100px;

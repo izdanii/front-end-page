@@ -1,91 +1,99 @@
 import Header from "components/header/header";
 import { MainProduct, ShoppingCart } from "./cart-style";
 import './cart.css'
+import { useSelector, useDispatch } from "react-redux/es/exports";
+import { changeQuantity, removeProductToCart } from "redux/action";
+
 const Cart = () => {
+  const { data } = useSelector(state=> state.productOrder)
+  const dispatch = useDispatch()
+  let total = 0
+  // console.log(data)
+  if (data.length == 1 ) {
+    const {price,quantity} = data[0]
+    total = price * quantity
+  } else if(data.length > 1) {
+    const itemTotal = data.map(p => p.price * p.quantity )
+    total = itemTotal.reduce(
+      
+      (previousValue, currentValue) =>  {
+        console.log("previousValue", previousValue)
+        console.log("currentValue", currentValue)
+       return (previousValue + currentValue)
+      }
+    )
+  }
+
+console.log("total",total)
+  
     return(
       <>
       <Header />
         <MainProduct className="mobile-Product">
         <ShoppingCart className="mobile-shoping">
-        <div class="column-labels">
+        <div>
             <br />
             <br />
             <br />
-          <label className="product-image product-tb">Image</label>
-          <label className="product-details product-tb">Product</label>
-          <label className="product-price product-tb">Price</label>
-          <label className="product-quantity product-tb">Quantity</label>
-          <label className="product-removal product-tb">Remove</label>
-          <label className="product-line-price product-tb">Total</label>
+          <div className="column-labels-flex">
+            <div className="column-labels-one">
+              <label className="label-image">Image</label>
+              <label className="label-details">Product</label>
+              <label className="label-price">Price</label>
+              <label className="label-quantity">Quantity</label>
+              <label className="label-removal">Remove</label>
+            </div>
+            <div className="column-labels-two">
+              <label className="label-total">Total</label>
+            </div>
+          </div>
+          
         </div>
-      
-        <div className="product">
+        {
+          data.map((product, i) => (
+          <div className="product">
           <div className="product-image">
-            <img src="https://s.cdpn.io/3/dingo-dog-bones.jpg" />
+            <img src={product.url} />
           </div>
           <div className="product-details">
-            <div className="product-title">Dingo Dog Bones</div>
-            <p className="product-description">The best dog bones of all time. Holy crap. Your dog will be begging for these things! I got curious once and ate one myself. I'm a fan.</p>
+            <div className="product-title">{product.name}</div>
+            <p className="product-description">{product.description}</p>
           </div>
-          <div className="product-price">12.99</div>
+          <div className="product-price">{product.price}</div>
           <div className="product-quantity">
-            <input type="number" value="2" min="1" />
+            <input type="number" onClick={() => dispatch(changeQuantity(product))} value={product.quantity}/>
           </div>
           <div className="product-removal">
-            <button className="remove-product">
+            <button className="remove-product" onClick={() => dispatch(removeProductToCart(product))}>
               Remove
             </button>
           </div>
-          <div className="product-line-price">25.98</div>
+          <div className="product-line-price">{product.quantity * product.price}</div>
         </div>
-        <div className="main-product-cart">
-        <div className="product">
-          <div className="product-image">
-            <img src="https://s.cdpn.io/3/large-NutroNaturalChoiceAdultLambMealandRiceDryDogFood.png" />
-          </div>
-          <div className="product-details">
-            <div className="product-title">Nutro™ Adult Lamb and Rice Dog Food</div>
-            <p className="product-description">Who doesn't like lamb and rice? We've all hit the halal cart at 3am while quasi-blackout after a night of binge drinking in Manhattan. Now it's your dog's turn!</p>
-          </div>
-          <div className="product-price">45.99</div>
-          <div className="product-quantity">
-            <input type="number" value="1" min="1" />
-          </div>
-          <div className="product-removal">
-            <button className="remove-product">
-              Remove
-            </button>
-          </div>
-          <div className="product-line-price">45.99</div>
-        </div>
-      
+          ))
+        }
         <div className="totals">
           <div className="totals-item">
-            <label>Subtotal</label>
-            <div className="totals-value" id="cart-subtotal">71.97</div>
-          </div>
-          <div className="totals-item">
-            <label>Tax (5%)</label>
-            <div className="totals-value" id="cart-tax">3.60</div>
-          </div>
-          <div className="totals-item">
             <label>Shipping</label>
-            <div className="totals-value" id="cart-shipping">15.00</div>
+            <div className="totals-value" id="cart-shipping">.Free</div>
           </div>
           <div className="totals-item totals-item-total">
             <label>Grand Total</label>
-            <div className="totals-value" id="cart-total">90.57</div>
+            <div className="totals-value" id="cart-total">{total}</div>
           </div>
         </div>
             
             <button className="checkout">Checkout</button>
-        </div>
+        {/* </div> */}
 
       
       </ShoppingCart>
       </MainProduct>
       </>
-    )
+    ) 
 }
+
+
+
 
 export default Cart;
