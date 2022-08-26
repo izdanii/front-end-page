@@ -15,17 +15,16 @@
 }
 
 .label-price{
-  margin-left: 180px;
+  margin-left: 200px;
 }
 
 .label-quantity{
-  margin-left: 20px;
+  margin-left: 60px;
 }
 
 .label-removal{
-  margin-left: 30px;
+  margin-left: 45px;
 }
-
 
 .product-image {
     float: left;
@@ -37,11 +36,11 @@
   }
   .product-price {
     float: left;
-    width: 8%;
+    width: 15%;
   }
   .product-quantity {
     float: left;
-    width: 10%;
+    width: 12%;
   }
   .product-removal {
     float: left;
@@ -51,24 +50,6 @@
     float: left;
     width: 12%;
     text-align: right;
-  }
-  /* This is used as the traditional .clearfix class */
-  .group:before, .shopping-cart:before, .column-labels:before, .product:before, .totals-item:before, .group:after, .shopping-cart:after, .column-labels:after, .product:after, .totals-item:after {
-    content: '';
-    display: table;
-  }
-  .group:after, .shopping-cart:after, .column-labels:after, .product:after, .totals-item:after {
-    clear: both;
-  }
-  .group, .shopping-cart, .column-labels, .product, .totals-item {
-    zoom: 1;
-  }
-  /* Apply clearfix in a few places */
-  /* Apply dollar signs */
-  .product .product-price:before, .product .product-line-price:before, .totals-value:before {
-    content: '';
-    
-    
   }
   /* Body/Header stuff */
   h1 {
@@ -187,11 +168,11 @@
       margin-bottom: 10px;
       width: auto;
     }
-    .product-price {
+    /* .product-price {
       clear: both;
       width: 70px;
       float: left
-    }
+    } */
     .product-quantity {
       width: 100px;
     }
@@ -270,9 +251,9 @@
       width: auto;
       margin-top: 10px;
     }
-    .product .product-line-price:before {
-      content: 'Item Total: $';
-    }
+    /* .product .product-line-price:before {
+      content: 'Item Total: Rp.';
+    } */
     .totals .totals-item label {
       width: 60%;
     }

@@ -3,6 +3,7 @@ import { MainProduct, ShoppingCart } from "./cart-style";
 import './cart.css'
 import { useSelector, useDispatch } from "react-redux/es/exports";
 import { changeQuantity, removeProductToCart } from "redux/action";
+import { rupiah } from "helper/helper";
 
 const Cart = () => {
   const { data } = useSelector(state=> state.productOrder)
@@ -25,7 +26,7 @@ const Cart = () => {
   }
 
 console.log("total",total)
-  
+
     return(
       <>
       <Header />
@@ -59,7 +60,7 @@ console.log("total",total)
             <div className="product-title">{product.name}</div>
             <p className="product-description">{product.description}</p>
           </div>
-          <div className="product-price">{product.price}</div>
+          <div className="product-price">{rupiah(product.price)}</div>
           <div className="product-quantity">
             <input type="number" onClick={() => dispatch(changeQuantity(product))} value={product.quantity}/>
           </div>
@@ -68,18 +69,18 @@ console.log("total",total)
               Remove
             </button>
           </div>
-          <div className="product-line-price">{product.quantity * product.price}</div>
+          <div className="product-line-price">{rupiah(product.quantity * product.price)}</div>
         </div>
           ))
         }
         <div className="totals">
           <div className="totals-item">
             <label>Shipping</label>
-            <div className="totals-value" id="cart-shipping">.Free</div>
+            <div className="totals-value" id="cart-shipping">Free</div>
           </div>
           <div className="totals-item totals-item-total">
             <label>Grand Total</label>
-            <div className="totals-value" id="cart-total">{total}</div>
+            <div className="totals-value" id="cart-total">{rupiah(total)}</div>
           </div>
         </div>
             
